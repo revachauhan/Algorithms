@@ -2,13 +2,7 @@ package org.prep;
 
 
  
-  class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-     TreeNode(int x) { val = x; }
-  }
- 
+
 public class SolutionHasPathSum {
     public boolean hasPathSum(TreeNode node, int target) {
 	   return	hasPathHelper(node, target, 0);
