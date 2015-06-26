@@ -1,4 +1,4 @@
-package reva.java.practice;
+package org.prep;
 
 import java.util.HashMap;
 import java.util.Map;
