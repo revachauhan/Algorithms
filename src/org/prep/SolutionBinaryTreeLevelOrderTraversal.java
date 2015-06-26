@@ -48,11 +48,11 @@ public class SolutionBinaryTreeLevelOrderTraversal {
 		}
 		
 	
-        ArrayList<ArrayList<Integer>> reversedResult = new  ArrayList<ArrayList<Integer>>();
+        List<List<Integer>> reversedResult = new  ArrayList<List<Integer>>();
     for(int i=al.size()-1; i>=0; i--){
         reversedResult.add((ArrayList<Integer>)al.get(i));
     }
-        
+        return reversedResult;
     }
 
 }
