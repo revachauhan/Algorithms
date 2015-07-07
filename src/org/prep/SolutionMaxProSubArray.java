@@ -17,7 +17,7 @@ public class SolutionMaxProSubArray {
 		{
 			int temp = maxSoFar;
 			
-				maxSoFar = Math.max(Math.max(a[i], maxSoFar*a[i]),minSoFar*a[i]);
+				maxSoFar = Math.max(Math.max(a[i], temp*a[i]),minSoFar*a[i]);
 				minSoFar = Math.min(Math.min(a[i], temp*a[i]), minSoFar*a[i]);
 				max = Math.max(maxSoFar, max);
 		}

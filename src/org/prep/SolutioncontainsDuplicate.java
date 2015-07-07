@@ -8,11 +8,6 @@ import java.util.Map;
  */
 public class SolutioncontainsDuplicate {
 
-	public static void main(String[] args) {
-
-
-
-	}
 	public boolean containsDuplicate(int[] nums) {
 		Map<Integer,Integer> map = new Hashtable<Integer, Integer>();
 		for(int i = 0; i <nums.length;i++)
