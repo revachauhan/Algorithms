@@ -5,42 +5,46 @@ import java.util.Map;
 
 public class SolutionlongestSubstring {
 	public static void main(String[] args) {
-		String s = "Revaaaaaaa";
+		String s = "tmmzuxt";
 		System.out.println(longestSubstring(s));
 		
 		
 	}
 	
+	
+	
 	public static int longestSubstring(String s)
 	{
-		Map<Character,Integer> map = new HashMap<Character,Integer>();
-		int minIndex =0;
-		int length=0;
-		int maxLength = 0;
-		for(int i =0; i<s.length();i++)
+		if(s==null)
+			return 0;
+		boolean flag[] = new boolean[256];
+		char chars[] = s.toCharArray();
+		int result =0;
+		int start =0;
+		for(int i =0;i<chars.length;i++)
 		{
-			Character c = s.charAt(i);
-			if(!map.containsKey(c))
+			char current = chars[i];
+			if(flag[current])
 			{
-				map.put(c, i);
-				length = i - minIndex +1;
-				if(maxLength<length)
-					maxLength = length;
-				
-				
+				result = Math.max(result, i-start);
+				for(int k=start;k<i;k++)
+				{
+					if(chars[k]==current)
+						{start = k+1;
+						break;
+						}
+					else
+					{
+						flag[k]= false;
+					}
+				}
 			}
 			else
-			{
-				length = i - (map.get(c)+1) +1;
-				map.put(s.charAt(i), i);				
-				minIndex = map.get(c)+1;
-				if(length > maxLength)
-					maxLength = length;
-			}
-			
+				flag[current] = true;
 		}
-		return maxLength;
 		
+		result = Math.max(result, chars.length-start);
+		return result;
 	}
 
 }
